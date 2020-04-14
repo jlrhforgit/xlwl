@@ -2,18 +2,18 @@ package com.jlrh.heagle.server.service;
 
 import java.util.List;
 
-import com.jlrh.heagle.server.dto.UserDto;
+import com.jlrh.heagle.server.dto.UserDTO;
 
 
 public interface UserService {
 	
-	List<UserDto> findAll();
+	List<UserDTO> findAll();
 	
-    List<UserDto> findAlljpa();
+    List<UserDTO> findAlljpa();
 
-	List<UserDto> findAlljpaId(String id);
+	List<UserDTO> findAlljpaId(String id);
 
-	List<UserDto> findAlljdbc();
+	List<UserDTO> findAlljdbc();
 
-	List<UserDto> findAlljpa3(String id);
+	List<UserDTO> findAlljpa3(String id);
 }

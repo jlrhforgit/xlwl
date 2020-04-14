@@ -12,6 +12,7 @@ import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Service;
 @Service
+@SuppressWarnings("unchecked")
 public class RedisUtils {
 	
     @SuppressWarnings("rawtypes")
@@ -163,7 +164,8 @@ public class RedisUtils {
      * @param value
      * @param scoure
      */
-    public void zAdd(String key,Object value,double scoure){
+    
+	public void zAdd(String key,Object value,double scoure){
         ZSetOperations<String, Object> zset = redisTemplate.opsForZSet();
         zset.add(key,value,scoure);
     }

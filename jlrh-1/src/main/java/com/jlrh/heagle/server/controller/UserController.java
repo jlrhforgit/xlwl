@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jlrh.heagle.config.SpringContextUtil;
-import com.jlrh.heagle.server.dto.UserDto;
+import com.jlrh.heagle.server.dto.UserDTO;
 import com.jlrh.heagle.server.service.UserService;
 
 
@@ -29,7 +29,7 @@ public class UserController {
  * @return
  */
     @RequestMapping("/findAll")
-    public List<UserDto> findAll(){
+    public List<UserDTO> findAll(){
     	long bTime =System.currentTimeMillis();
     	log.info("测试mybatie获取数据");
 //    	 测试上下文获取成果    begin
@@ -45,7 +45,7 @@ public class UserController {
      * @return
      */
     @RequestMapping("/findAlljpa")
-    public List<UserDto> findAlljpa(){
+    public List<UserDTO> findAlljpa(){
 //    	long bTime =System.currentTimeMillis();
     	log.info("测试jpa获取数据 -1");
     	return userService.findAlljpa();
@@ -55,7 +55,7 @@ public class UserController {
      * @return
      */
     @RequestMapping("/findAlljpaId")
-    public List<UserDto> findAlljpaId(HttpServletRequest req){
+    public List<UserDTO> findAlljpaId(HttpServletRequest req){
     	log.info("测试jpa获取数据 -2");
     	String id =req.getParameter("id");
     	
@@ -66,7 +66,7 @@ public class UserController {
      * @return
      */
     @RequestMapping("/findAlljpa3")
-    public List<UserDto> findAlljpa3(HttpServletRequest req){
+    public List<UserDTO> findAlljpa3(HttpServletRequest req){
     	log.info("测试jpa获取数据 -2");
     	String id =req.getParameter("id");
     	
@@ -77,7 +77,7 @@ public class UserController {
      * @return
      */
     @RequestMapping("/findAlljdbc")
-    public List<UserDto> findAlljdbc(HttpServletRequest req){
+    public List<UserDTO> findAlljdbc(HttpServletRequest req){
     	log.info("测试jdbctemplate获取数据 -1");
     	
     	return userService.findAlljdbc();
